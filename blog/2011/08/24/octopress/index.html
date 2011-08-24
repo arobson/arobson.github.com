@@ -100,18 +100,61 @@
   </header>
 
 
-<div class="entry-content"><p>Months ago, OJ Reeves was telling me bout Blogofile, a blog engine
+<div class="entry-content"><p>Months ago, <a href="http://buffered.io">OJ Reeves</a> was telling me bout <a href="http://www.blogofile.com">Blogofile</a>, a blog engine
 that generates static content from markdown. I tried to get a
 Blogofile rig setup and after about an hour or so of fiddling screamed
 something like &#8220;BLOGOFILE, Y U NO&#8230;&#8221; and gave up.</p>
 
-<p>Then I noticed a tweet from Ben Scheirman saying he was moving to a
-new blog powered by Octopress. I clicked the link to see what it
+<!--more-->
+
+
+<p>Then I noticed a tweet from <a href="http://benscheirman.com">Ben Scheirman</a> saying he was moving to a
+new blog powered by <a href="http://octopress.org">Octopress</a>. I clicked the link to see what it
 looked like and my eyes beheld the glory of a default template so
 graceful that I just had to have it&#8230;</p>
 
-<p>Turns out Octopress is blog engine based on Jekyll that produces
-static content from markdown files and has a lot of nice plugins</p>
+<p>Turns out Octopress is blog engine based on <a href="http://jekyllrb.com">Jekyll</a> that produces
+static content from markdown files and has a lot of nice plugins that
+are very easy to configure out of the box. The fact that it uses
+<a href="http://daringfireball.net/projects/markdown/syntax">markdown</a> pretty much has me sold. I&#8217;ve got a markdown mode for emacs
+installed and I&#8217;m in love.</p>
+
+<p>Here&#8217;s the workflow as I&#8217;ve experienced it so far:</p>
+
+<ul>
+<li>Create a new post, you can use rake scripts to make this trivial.</li>
+<li>Generate the static content using &#8216;rake generate&#8217;.</li>
+<li>Push the content to your github repository where you&#8217;ve set up
+github pages.</li>
+</ul>
+
+
+<p><strong>Upsides:</strong></p>
+
+<ul>
+<li>The default theme is beautiful.</li>
+<li>Markdown is awesome.</li>
+<li>Your blog is in source control.</li>
+<li>It&#8217;s dead simple.</li>
+<li>It&#8217;s the cleanest markup I&#8217;ve ever seen coming from a blog engine.</li>
+<li>It&#8217;s really easy to customize.</li>
+</ul>
+
+
+<p><strong>Downsides:</strong></p>
+
+<ul>
+<li>No spell checker. I&#8217;m doomed, this whole post is probably gibberish.</li>
+<li>It&#8217;s not a WYSIWYG. If you like those, you&#8217;ll loath this.</li>
+<li>The Solarized color theme for code snippets makes me sad. (I think I
+can change the theme somehow&#8230;)</li>
+<li>There are probably others but I don&#8217;t care about them.</li>
+</ul>
+
+
+<p>Pull it down. It&#8217;s free and what-not. git clone
+git://github.com/imathis/octopress.git. Then checkout the docs at
+octopress.org, your eyes will thank you.</p>
 </div>
 
 

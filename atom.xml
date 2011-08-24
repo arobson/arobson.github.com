@@ -4,7 +4,7 @@
   <title>Sharp Learning Curve</title>
   <link href="http://sharplearningcurve.com/atom.xml" rel="self"/>
   <link href="http://sharplearningcurve.com/"/>
-  <updated>2011-08-24T02:16:05-04:00</updated>
+  <updated>2011-08-24T02:34:30-04:00</updated>
   <id>http://sharplearningcurve.com/</id>
   <author>
     <name>Alex Robson</name>
@@ -19,18 +19,61 @@
     <link href="http://sharplearningcurve.com/blog/2011/08/24/octopress/"/>
     <updated>2011-08-24T01:57:00-04:00</updated>
     <id>http://sharplearningcurve.com/blog/2011/08/24/octopress</id>
-    <content type="html">&lt;p&gt;Months ago, OJ Reeves was telling me bout Blogofile, a blog engine
+    <content type="html">&lt;p&gt;Months ago, &lt;a href=&quot;http://buffered.io&quot;&gt;OJ Reeves&lt;/a&gt; was telling me bout &lt;a href=&quot;http://www.blogofile.com&quot;&gt;Blogofile&lt;/a&gt;, a blog engine
 that generates static content from markdown. I tried to get a
 Blogofile rig setup and after about an hour or so of fiddling screamed
 something like &quot;BLOGOFILE, Y U NO...&quot; and gave up.&lt;/p&gt;
 
-&lt;p&gt;Then I noticed a tweet from Ben Scheirman saying he was moving to a
-new blog powered by Octopress. I clicked the link to see what it
+&lt;!--more--&gt;
+
+
+&lt;p&gt;Then I noticed a tweet from &lt;a href=&quot;http://benscheirman.com&quot;&gt;Ben Scheirman&lt;/a&gt; saying he was moving to a
+new blog powered by &lt;a href=&quot;http://octopress.org&quot;&gt;Octopress&lt;/a&gt;. I clicked the link to see what it
 looked like and my eyes beheld the glory of a default template so
 graceful that I just had to have it...&lt;/p&gt;
 
-&lt;p&gt;Turns out Octopress is blog engine based on Jekyll that produces
-static content from markdown files and has a lot of nice plugins&lt;/p&gt;
+&lt;p&gt;Turns out Octopress is blog engine based on &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt; that produces
+static content from markdown files and has a lot of nice plugins that
+are very easy to configure out of the box. The fact that it uses
+&lt;a href=&quot;http://daringfireball.net/projects/markdown/syntax&quot;&gt;markdown&lt;/a&gt; pretty much has me sold. I've got a markdown mode for emacs
+installed and I'm in love.&lt;/p&gt;
+
+&lt;p&gt;Here's the workflow as I've experienced it so far:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Create a new post, you can use rake scripts to make this trivial.&lt;/li&gt;
+&lt;li&gt;Generate the static content using 'rake generate'.&lt;/li&gt;
+&lt;li&gt;Push the content to your github repository where you've set up
+github pages.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;&lt;strong&gt;Upsides:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The default theme is beautiful.&lt;/li&gt;
+&lt;li&gt;Markdown is awesome.&lt;/li&gt;
+&lt;li&gt;Your blog is in source control.&lt;/li&gt;
+&lt;li&gt;It's dead simple.&lt;/li&gt;
+&lt;li&gt;It's the cleanest markup I've ever seen coming from a blog engine.&lt;/li&gt;
+&lt;li&gt;It's really easy to customize.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;&lt;strong&gt;Downsides:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;No spell checker. I'm doomed, this whole post is probably gibberish.&lt;/li&gt;
+&lt;li&gt;It's not a WYSIWYG. If you like those, you'll loath this.&lt;/li&gt;
+&lt;li&gt;The Solarized color theme for code snippets makes me sad. (I think I
+can change the theme somehow...)&lt;/li&gt;
+&lt;li&gt;There are probably others but I don't care about them.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;Pull it down. It's free and what-not. git clone
+git://github.com/imathis/octopress.git. Then checkout the docs at
+octopress.org, your eyes will thank you.&lt;/p&gt;
 </content>
   </entry>
   
