@@ -4,7 +4,7 @@
   <title>Sharp Learning Curve</title>
   <link href="http://sharplearningcurve.com/atom.xml" rel="self"/>
   <link href="http://sharplearningcurve.com/"/>
-  <updated>2011-08-24T01:51:43-04:00</updated>
+  <updated>2011-08-24T02:16:05-04:00</updated>
   <id>http://sharplearningcurve.com/</id>
   <author>
     <name>Alex Robson</name>
@@ -13,6 +13,26 @@
     
   </author>
 
+  
+  <entry>
+    <title>Octopress</title>
+    <link href="http://sharplearningcurve.com/blog/2011/08/24/octopress/"/>
+    <updated>2011-08-24T01:57:00-04:00</updated>
+    <id>http://sharplearningcurve.com/blog/2011/08/24/octopress</id>
+    <content type="html">&lt;p&gt;Months ago, OJ Reeves was telling me bout Blogofile, a blog engine
+that generates static content from markdown. I tried to get a
+Blogofile rig setup and after about an hour or so of fiddling screamed
+something like &quot;BLOGOFILE, Y U NO...&quot; and gave up.&lt;/p&gt;
+
+&lt;p&gt;Then I noticed a tweet from Ben Scheirman saying he was moving to a
+new blog powered by Octopress. I clicked the link to see what it
+looked like and my eyes beheld the glory of a default template so
+graceful that I just had to have it...&lt;/p&gt;
+
+&lt;p&gt;Turns out Octopress is blog engine based on Jekyll that produces
+static content from markdown files and has a lot of nice plugins&lt;/p&gt;
+</content>
+  </entry>
   
   <entry>
     <title>Crazy Pills</title>
