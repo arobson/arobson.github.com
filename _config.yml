@@ -2,17 +2,17 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://yoursite.com
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
-author: Your Name
+url: http://sharplearningcurve.com
+title: Sharp Learning Curve
+subtitle: Hey, where'd the road go...
+author: Alex Robson
 simple_search: http://google.com/search
 
 # RSS / Email (optional) subscription links (change if using something like Feedburner)
 subscribe_rss: /atom.xml
 subscribe_email:
 # RSS feeds can list your email address if you like
-email:
+email: alex AT sharplearningcurve DOT com
 
 # ----------------------- #
 #    Jekyll & Plugins     #
@@ -49,11 +49,11 @@ default_asides: [asides/recent_posts.html, asides/twitter.html, asides/delicious
 # ----------------------- #
 
 # Twitter
-twitter_user:
-twitter_tweet_count: 4
+twitter_user: A_Robson
+twitter_tweet_count: 5
 twitter_show_replies: false
 twitter_follow_button: true
-twitter_show_follower_count: false
+twitter_show_follower_count: true
 twitter_tweet_button: true
 
 # Google Plus
@@ -61,7 +61,7 @@ google_plus_one: true
 google_plus_one_size: medium
 
 # Pinboard
-pinboard_user:
+pinboard_user: arobson
 pinboard_count: 3
 
 # Delicious
