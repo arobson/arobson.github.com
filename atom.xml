@@ -4,7 +4,7 @@
   <title>Sharp Learning Curve</title>
   <link href="http://sharplearningcurve.com/atom.xml" rel="self"/>
   <link href="http://sharplearningcurve.com/"/>
-  <updated>2011-08-24T00:03:33-04:00</updated>
+  <updated>2011-08-24T01:06:00-04:00</updated>
   <id>http://sharplearningcurve.com/</id>
   <author>
     <name>Alex Robson</name>
@@ -13,5 +13,254 @@
     
   </author>
 
+  
+  <entry>
+    <title>Crazy Pills</title>
+    <link href="http://sharplearningcurve.com/blog/2011/04/07/crazy-pills/"/>
+    <updated>2011-04-07T08:25:00-04:00</updated>
+    <id>http://sharplearningcurve.com/blog/2011/04/07/crazy-pills</id>
+    <content type="html">&lt;p&gt;I get it; you have to find some way to market yourself, which means differentiation. If you’re well known in your field, the pressure to differentiate yourself increases. A little pot-stirring or boat-rocking can be a good thing. Upsetting the status quo and getting others to question their assumptions is a good thing.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+
+&lt;h2&gt;Signal To Noise&lt;/h2&gt;
+
+&lt;p&gt;But eventually too much of this sort of activity becomes very, very obnoxious noise that will not only get blocked out but can also get any associated ideas discredited. A valuable idea is probably good enough on it’s own; dressing it up in so much fan-fare and gimmicky communication is insulting to your audience and will eventually drive away those intelligent enough to appreciate the implications of any worth-while message. I want to hear new and challenging ideas, I spend a lot of time exposing myself to those who think differently and trying to learn everything I can from them. I don’t have a lot of patience trying to learn anything from anyone who puts a lot of effort in sensationalizing or “blinging” the message. Just get to the point, please?&lt;/p&gt;
+
+&lt;h2&gt;Slave To Nothing&lt;/h2&gt;
+
+&lt;p&gt;A slavish mindset to anything is unhealthy. Obsessions with process, development methodologies, toolsets, or specific languages are all dangerous when they blind to you. All these things are created with the sole intention of enabling effective software development. Not every item in every one of these categories was made to work for everyone. Evaluate what’s out their and use what makes you effective; I’ve yet to hear a customer complain about good results.&lt;/p&gt;
+
+&lt;h2&gt;Maybe It’s Just Me…&lt;/h2&gt;
+
+&lt;p&gt;I think testing software is good. I am awful at test-first development and I usually get somewhere between 60% to 80% coverage when I do write good tests. What I have managed to internalize are many of the lessons, patterns and disciplines that test driven design enforces. In some ways I feel like I have gotten a lot of benefit from reading about test-driven development and believe that even though I don’t stringently adhere to their prescriptive “Failing tests first: red-green-refactor!”, I’m a much developer than I was before I learned about TDD and BDD.&lt;/p&gt;
+
+&lt;p&gt;There are a lot of other examples along these lines in different areas; but I think ultimately all these ideas are tools in the belt. Use the right (process, conceptual, design, etc.) tool for the task at hand that will provide benefit. Software development is a creative endeavor, trying to turn it into a industrialized process is a mistake.&lt;/p&gt;
+
+&lt;h2&gt;This Echo Chamber Gets Lonely&lt;/h2&gt;
+
+&lt;p&gt;I really am interested in some other’s thoughts on this. Hopefully this post doesn’t come across as so close minded those who disagree or have thoughts to add wouldn’t do so.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>When To Build Your Own</title>
+    <link href="http://sharplearningcurve.com/blog/2011/03/04/when-to-build-your-own/"/>
+    <updated>2011-03-04T17:11:00-05:00</updated>
+    <id>http://sharplearningcurve.com/blog/2011/03/04/when-to-build-your-own</id>
+    <content type="html">&lt;p&gt;I’ve been thinking a lot about how to make this decision and have recently put some interesting use cases together that have really helped me internalize and solidify what I believe is a solid foundation for deciding when to build it yourself.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+
+&lt;h2&gt;TL;DR&lt;/h2&gt;
+
+&lt;p&gt;If the component or feature in question is crucial to your core competency or factors in to your competitive advantage, you’re probably crazy if you don’t take some form of ownership. Giving another entity control over those elements in your organization is just shy of lunacy. No one has your company’s best interest at heart other than your company.&lt;/p&gt;
+
+&lt;p&gt;I’m writing this because the conventional developer wisdom I’ve encountered in the past is, “Why make X, use Y, it’s already there and you’re just reinventing the wheel.”. It’s not always wrong, but it’s certainly not always right. I’ve made the mistake of reinventing an inferior alternative before and it’s taught me a valuable lesson: how to know when to build your own.&lt;/p&gt;
+
+&lt;h2&gt;Learning From Apple&lt;/h2&gt;
+
+&lt;p&gt;I am not an Apple fan boy. Lots of things they do frustrate me or seem like mistakes in my opinion. Steve Jobs has been the occasional target of my snarky criticism in the past. It turns out Steve Jobs is perhaps one of the most brilliant business leaders in the technology industry. He took Apple from irrelevance to the second largest company in the world in terms of market capital. That’s not something one trips into. So how’d Apple get where it is today?&lt;/p&gt;
+
+&lt;p&gt;Academia has shifted its opinion regarding what makes for a successful strategy. Perhaps it’s due to the change in the nature of competition or globalization or both and more. Ultimately, SWOT analysis doesn’t cut it anymore. Company’s have to focus on internal resources and capabilities and select those that are relevant in the market and sustainable in order to build their competitive advantage and establish their core competencies.&lt;/p&gt;
+
+&lt;p&gt;What’s this got to do with Apple? As it turns out, this is exactly what Steve Jobs was doing in practice. When he returned to Apple as “interim CEO”, the first thing he did was inform the board and his executive team that they would be killing 20 of their 24 product lines. Why? I suspect Steve knew that to be relevant and differentiate themselves they needed to focus on complimentary products that they could excel at.&lt;/p&gt;
+
+&lt;p&gt;Apple isn’t known for partnering with a lot of vertical partners. Sure, Steve’s not making bread boards and soldering the chips all day, but they are very, very involved in every step of every product. They write their own OS. They roll their own software. Because no one else does these things? Of course not. Is it why they’re successful? You know it.&lt;/p&gt;
+
+&lt;p&gt;It turns out that the specific differentiation strategy they’ve implemented thrives on the “differentness” of Apple which just so happens to be relevant to their target market because Apple is very good at industrial design and user experience. And it’s not because they have lots of focus groups or give a crap what you and I think. They establish expertise in design and produce products that they love. If you don’t like their work, you aren’t part of their target market.&lt;/p&gt;
+
+&lt;h2&gt;Protecting Your Competitive Advantage&lt;/h2&gt;
+
+&lt;p&gt;It’s almost formulaic really. Determine the key success factors within your market, determine which resources and capabilities relate to those factors and build your strategy around those in order to create a sustainable competitive advantage. Sustainability is especially important here and is determined by factors such as scarcity, durability and how easy it would be for competitors to transfer or replicate the capability or resource.&lt;/p&gt;
+
+&lt;p&gt;At any rate, the take away here is, to survive and make a profit you have to have some competitive advantage and you must ensure that it’s one that’s going to be around for a while since establishing one requires a huge organizational commitment and investment to achieve.&lt;/p&gt;
+
+&lt;h2&gt;Build It Yourself&lt;/h2&gt;
+
+&lt;p&gt;Let’s make this a lot more concrete and less academic and “businessy”. LMAX allows users to trade futures and commodities online. Ok, that’s a really simplistic way to look at it. Effectively, they started out as the world’s largest online bookie. The interesting thing both customer bases have is that they’re extremely sensitive to any latency in their interactions and if they detect your system is lagging and exposing them to additional risk they’ll walk away from your service and you’ll stop making money. As you might imagine, there’s a fair amount of money to be made in either line of business and so LMAX could’ve just decided to throw tons of money into hardware and vendor solutions built for insane volume. Instead, Martin Thompson and Michael Barker decided to deep dive into the very deep subject matter of high, concurrent volume at low latency. What they have created is a system capable of handling 100,000 transactions per millisecond, per server. Granted, the servers were non-trivial. I believe it was 16 physical cores with 144 GB of RAM, not exactly a typical desktop machine.&lt;/p&gt;
+
+&lt;p&gt;The key here is that, at the core of their value proposition is the ability for customers to make trades/bets with the least latency imposed risk as possible. Relying on a vendor to supply them with this capability vs. owning it themselves would have made them extremely vulnerable as it makes a significant portion of their core competency unsustainable: their performance wouldn’t be scarce, it would be very transferable and the durability would be completely unpredictable.&lt;/p&gt;
+
+&lt;h2&gt;Don’t Build It Yourself&lt;/h2&gt;
+
+&lt;p&gt;On the other hand, let’s take a look at a very different business model. Let’s assume there’s a small technology start up called Mountain Top Technology. This technology company asserts itself as a technology company and has set a long term strategic goal of building a premier team of consultants for their region. Mountain Top Tech has the difficult choice early on of deciding whether to do without, purchase or build a back-office solution that will enable them to automate some billing processes. Now, I’ve already given away the answer here, but based on everything I’ve said so far, I’m sure you can pre-formulate the argument I’m about to make against building the solution in-house.&lt;/p&gt;
+
+&lt;p&gt;Why wouldn’t you? You have the beginnings of a great team and they’ve got capacity; why not have them put that to good use and save the company some money. Without addressing all the issues, the main reason is that you’re committing key resources that are crucial to your core competency to efforts that won’t improve your competitive advantage, are irrelevant to your core competency, irrelevant to your market and have no tangible profit impact.&lt;/p&gt;
+
+&lt;h2&gt;Wrapping Up&lt;/h2&gt;
+
+&lt;p&gt;I’d be very interested in other examples that anyone felt either illustrate or disprove these principals. I think it matters a lot, especially in the open source community, and even more so in the web stack space where there are so many different web frameworks under way. I’d be willing to bet that many of them sprung up from legitimate need to support the competitive advantage of the organization vs. a developers desire to roll their own.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Craftsmanship and Delivery</title>
+    <link href="http://sharplearningcurve.com/blog/2011/01/25/craftsmanship-and-delivery/"/>
+    <updated>2011-01-25T17:15:00-05:00</updated>
+    <id>http://sharplearningcurve.com/blog/2011/01/25/craftsmanship-and-delivery</id>
+    <content type="html">&lt;p&gt;I feel very strongly about this issue based on personal experience, education and just plain fear that some important points are getting missed. My frustration is definitely going to show in this post, so yes, it’s “ranty”.&lt;/p&gt;
+
+&lt;h2&gt;TL;DR&lt;/h2&gt;
+
+&lt;p&gt;Speed over quality only makes sense if you work in the fast food industry. Software development isn’t strictly engineering, math or art; the medium we work is too tractable for it to be limited to only aspects of any single fields. It is a unique discipline that requires knowledge and interest in many fields to achieve mastery. Craftsmanship, to me, is about acknowledging these elements of software development and how they are each instrumental in delivering real value to the customer that provides a return worthy of the investment made in our ability. In my opinion, far too much time is spent trying to reduce the many-faceted complexity of good development to some myopic name, phrase or platitude. Software development is neither simple nor for the light of heart. If you are either, flee. Here be dragons.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+
+&lt;h2&gt;Anecdotally…&lt;/h2&gt;
+
+&lt;p&gt;I’ll say that I know of at least two companies that have become irrelevant in their industry because they got stuck with and kept an awful code base. I know of one that collapsed largely due to a very expensive, awful pile of crap that was built under a “just ship it!” team; when the dust settled on that project, customers using the system suffered real and true harm. In one case, the “delivery focused” organization took an awful code base and spent 3 years trying to make it fit for market. Initially they had a 3 month plan for how they could “make it just good enough”.&lt;/p&gt;
+
+&lt;h2&gt;Requisite Knowledge&lt;/h2&gt;
+
+&lt;p&gt;I’ve been writing software professionally for almost 10 years now. I’m one class away from an MBA in Technology Management and my undergrad was in MIS (a business/tech degree). Economics, finance and managerial accounting are no strangers to me. All this to say; I actually have a requisite knowledge to add at least some weight to my opinions.&lt;/p&gt;
+
+&lt;h2&gt;The Aftermath of Astronauts&lt;/h2&gt;
+
+&lt;p&gt;I think some of the attention to delivery timelines has come from several software projects getting burned due to the time it took to write them only to find the company was too late to market, the technology had already gone stale, or the design that was so painstakingly implemented is now obsolete. I think that chasing after the “new” tech is definitely bad and I’ve been guilty of this in some cases. My personal lesson: favor open standards over vendor flashiness, learn from other systems with similar technical footprints, focus on simplicity over technical “coolness” and only accept complexity where warranted. Those are all safe take-aways. I think the knee-jerk reaction against long time-lines fails to really analyze the wreckage.&lt;/p&gt;
+
+&lt;h2&gt;The Experts Pushing “Just ship it”&lt;/h2&gt;
+
+&lt;p&gt;I get it. Delivery matters. Here’s the problem: you’re so good at software development, you care too much to deliver junk and to you, delivering quality solutions isn’t the minefield it is for the average developer out there. You’ve probably been on projects where technical issues ate up too much time. I’ve seen several projects spin their wheels because of the technologies chosen to implement the solution.&lt;/p&gt;
+
+&lt;p&gt;All that to say, when average developers who admire and look up to you hear you say, “just ship it”, that’s all they hear. How about change your message to “deliver value”.&lt;/p&gt;
+
+&lt;h2&gt;The Legacy of GET ‘ER DUUUUUUUN!&lt;/h2&gt;
+
+&lt;p&gt;There are a lot of developers that try to disguise incompetence or obsolescence behind rhetoric about how they’re just trying to serve the customer’s best interest. The customer doesn’t want a half-assed hacked together solution that they will have to pay someone like me to come in and fix (I charge more to clean up messes because I can actually deliver). When code is slapped together as quickly as it can be copied out of MSDN articles and StackOverflow answers, something has been shipped, but it’s more like a time-bomb than value.&lt;/p&gt;
+
+&lt;p&gt;I’ve worked with, cleaned up after and outlasted too many of these kinds of developers to have any patience left with an over-emphasis on shipping.&lt;/p&gt;
+
+&lt;h2&gt;The False Dichotomy&lt;/h2&gt;
+
+&lt;p&gt;If it’s not apparent yet, I don’t believe that a slavish mindset to either extreme is tenable. This is just part of the reason I’m so frustrated by this kind of debate. Your customer wants you to deliver quickly but they need you to deliver value. The challenge is honestly in the communication. If you have the right people on the project, those individuals can remind the customer of why it’s taking longer than yesterday to deliver value. You have to deliver quality.&lt;/p&gt;
+
+&lt;h2&gt;Sunk Cost Fallacy&lt;/h2&gt;
+
+&lt;p&gt;The sunk cost fallacy in general is insisting that something is worth $X because that’s what you’ve spent on it. I’ve seen a lot of individuals make this mistake without consciously realizing that’s what they’re doing. In reality, it doesn’t matter what you spent, it only matters what value the thing can provide. Most managers make this mistake presented with a rewrite vs. duct tape choice: “we’ve already spent 2 years and 2 million developing this application, it’s too expensive to start over”.&lt;/p&gt;
+
+&lt;h2&gt;Software Projects of Significance are Capital Investments&lt;/h2&gt;
+
+&lt;p&gt;Software projects of any significant size are a capital investment/project. In companies run by leadership with a clue, this kind of investment is tracked and measured for return. In companies that get burned with systems that continuously fall over or are too expensive to maintain or upgrade, leadership will realize, “I could invest this money on the market and see a better return”. The system exists to provide a return. If it doesn’t it’s a failure.&lt;/p&gt;
+
+&lt;h2&gt;Deliver Quality&lt;/h2&gt;
+
+&lt;p&gt;If the system in question exists as part of the company’s core competency/value proposition, it can’t both be a raving success and a flaming pile of crap. This is a point that really shouldn’t get argument but I’ve been surprised by the number of individuals who try to say that time to market is more important than quality. Right. Time to market is important, but what you bring to market is equally if not more important. User satisfaction cannot be faked; they’re not going to like a failed mess because it was fast.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Consistent Hashing</title>
+    <link href="http://sharplearningcurve.com/blog/2010/09/27/consistent-hashing/"/>
+    <updated>2010-09-27T01:35:00-04:00</updated>
+    <id>http://sharplearningcurve.com/blog/2010/09/27/consistent-hashing</id>
+    <content type="html">&lt;p&gt;I’ve recently started working on a new set of architectural challenges. The core requirement, at a high-level, is process millions of transactions a day.&lt;/p&gt;
+
+&lt;p&gt;After reading about consistent hashing, it seems to me that it’s one
+of the best ways to implement APIs that can dynamically scale out and
+rebalance. Consistent hashing isn’t the entire solution though, it’s
+just the algorithm used for making consistent assignments or
+relationships between different sets of data in such a way that if we
+add or remove items, the algorithm can be recalculated on any machine
+and produce the same results (hence, consistent).&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+
+&lt;h2&gt;Implementation challenges&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Given the same inputs, every client using the algorithm must produce the same results&lt;/li&gt;
+&lt;li&gt;A good implementation will balance associations evenly across the available nodes&lt;/li&gt;
+&lt;li&gt;A good implementation should be capable of quickly rebalancing the associations if a node is removed or added&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h2&gt;Calculating Consistent Results&lt;/h2&gt;
+
+&lt;p&gt;This is the simple part of consistent hashing: use the same value to hash against and use a hashing method that produces the same result given identical inputs and you’re done. I’ve been using MD5, it’s fast and simple to convert strings into 64 bit integers.&lt;/p&gt;
+
+&lt;p&gt;The downside to this solution is that there’s no way to guarantee a nice and even distribution of key space since hashing produces consistent yet unpredictable results. That leads us to the next point:&lt;/p&gt;
+
+&lt;h2&gt;Producing Balanced Distributions&lt;/h2&gt;
+
+&lt;p&gt;This part is significantly more difficult. Fortunately, it’s been solved frequently by other developers who share their knowledge. The solution is to assign virtual keys for each key (see the fourth slide for an example) so that we decrease the distance between keys and thus even out the key space. The trick is finding the right balance of virtual keys to add per key.&lt;/p&gt;
+
+&lt;h2&gt;Rebalancing&lt;/h2&gt;
+
+&lt;p&gt;The rebalancing should actually happen automatically. When removing a key, all the virtual nodes are removed; when adding a key, new virtual keys get added. The catch is making this happen in a performant manner.&lt;/p&gt;
+
+&lt;h2&gt;Need For Speed&lt;/h2&gt;
+
+&lt;p&gt;If we keep the list of keys in a list, adding, removing and even looking up the correct key can become costly and the time for each operation increases linearly as the set of virtual keys grows. What we want is a fast way to handle all of these operations that has logarithmic performance. As it happens, binary trees are a great way to improve look-up speed and red-black trees are a very performant way to auto-balance the tree after adds or removes to ensure that the tree is optimized for look-ups. I used a red-black tree algorithm because it’s one that I could handle and I found some good material to help discuss some interesting approaches for implementation.&lt;/p&gt;
+
+&lt;h2&gt;Applications In Symbiote&lt;/h2&gt;
+
+&lt;p&gt;There are actually several places I plan to introduce consistent hashing behind the scenes. I’ve already written a class called a Distributor which encapsulates a consistent hash and behaves like a strongly typed collection. This approach will allow me to easily add connection balancing to the Couch, Memcached, Redis, and RabbitMQ APIs. It will also enable a few other essential features (blog posts to follow).&lt;/p&gt;
+
+&lt;p&gt;I put together a few slides to provide some illustrations for a way to
+conceptualize how consistent hashing works.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://sharplearningcurve.com/images/consistent-hashing-1.png&quot; alt=&quot;Slide 1&quot; /&gt;
+&lt;img src=&quot;http://sharplearningcurve.com/images/consistent-hashing-2.png&quot; alt=&quot;Slide 2&quot; /&gt;
+&lt;img src=&quot;http://sharplearningcurve.com/images/consistent-hashing-3.png&quot; alt=&quot;Slide 3&quot; /&gt;
+&lt;img src=&quot;http://sharplearningcurve.com/images/consistent-hashing-4.png&quot; alt=&quot;Slide 4&quot; /&gt;&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>An Improved Rx Approach For Limiting Asynchronous Calls</title>
+    <link href="http://sharplearningcurve.com/blog/2010/07/01/an-improved-rx-approach-for-limiting-asynchronous-calls/"/>
+    <updated>2010-07-01T00:44:00-04:00</updated>
+    <id>http://sharplearningcurve.com/blog/2010/07/01/an-improved-rx-approach-for-limiting-asynchronous-calls</id>
+    <content type="html">&lt;p&gt;Not a day after I posted Using Reactive Extensions To Throttle Asynchronous Tasks, Josh Bush was already (kindly) saying “I think your code may have a problem”. The issue with the first example is two-fold: one it doesn’t really work as posted and two, if it did it would behave in a less than ideal way. Basically, it calls wait after each item. Not exactly what I was going for.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+
+&lt;h2&gt;It Would Be Cool If…&lt;/h2&gt;
+
+&lt;p&gt;You have some known/unknown quantity of total work (Y), and you want to limit the number of worker threads in process at any given time (X). What my first try was actually doing was making X asynchronous calls and for every call past that (X+N) it was immediately calling WaitOne on the wait handle.&lt;/p&gt;
+
+&lt;h2&gt;Josh To The Rescue&lt;/h2&gt;
+
+&lt;p&gt;I fought with my example for an hour or so and realized that there wasn’t just some really simple thing for me to tack on to the existing code sample. This morning, I read Josh’s post about his approach to limiting the number of asynchronous calls using IEnumerable only. The key to his approach (and little did I know, to mine as well) was the really cool Aggregate extension method.&lt;/p&gt;
+
+&lt;h2&gt;My Improved Solution&lt;/h2&gt;
+
+&lt;div&gt;&lt;script src='https://gist.github.com/1167335.js?file='&gt;&lt;/script&gt;
+&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;Action&amp;lt;IList&amp;lt;XElement&amp;gt;&amp;gt; saveAction = SaveChunk;
+var loader = new BulkPostLoader(@&amp;quot;e:\stackoverflow\062010 so\posts.xml&amp;quot;);
+var batches = loader.BufferWithCount(5000);
+var results = batches.Select(x =&amp;gt; saveAction.BeginInvoke(x, null, null));
+        
+results
+    .Aggregate(new HashSet&amp;lt;IAsyncResult&amp;gt;(), (set, result) =&amp;gt;
+    {
+        set.RemoveWhere(x =&amp;gt; x.IsCompleted);
+        set.Add(result);
+        if(set.Count &amp;gt; 5)
+        {
+            var inProcess = set.Where(x =&amp;gt; !x.IsCompleted).FirstOrDefault();
+            if(inProcess != null)
+            {
+                inProcess.AsyncWaitHandle.WaitOne();
+            }
+        }
+        return set;
+    }
+    .Subscribe(x =&amp;gt; {});&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/div&gt;
+
+
+&lt;p&gt;As you can see, the main difference is that I’m using a HashSet to aggregate calls over the stream. Every time I clear out any calls that have completed to prevent completed calls from making my code behave as if the number of calls in process have reached the limit. Every time I add the most recent async handle to the set and then, if the set is above the limit, I take an uncompleted call and wait on it.&lt;/p&gt;
+
+&lt;h2&gt;Well That Wasn’t So Bad, Was It?&lt;/h2&gt;
+
+&lt;p&gt;By now you’ve certainly realized I’m not an Rx expert, I’m just sharing what I’m trying to learn as I learn it. Hopefully it’s more helpful than it is distracting.&lt;/p&gt;
+</content>
+  </entry>
   
 </feed>

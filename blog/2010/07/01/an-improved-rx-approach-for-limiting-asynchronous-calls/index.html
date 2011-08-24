@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Sharp Learning Curve: Blog Archive</title>
+  <title>Sharp Learning Curve: An Improved Rx Approach For Limiting Asynchronous Calls</title>
   <meta name="author" content="Alex Robson">
   
 
@@ -16,7 +16,7 @@
 
   
 
-  <link rel="canonical" href="http://sharplearningcurve.com/blog/archives/index.html"/>
+  <link rel="canonical" href="http://sharplearningcurve.com/blog/2010/07/01/an-improved-rx-approach-for-limiting-asynchronous-calls/"/>
   <link href="/favicon.png" rel="shortcut icon" />
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -81,94 +81,111 @@
   <div id="main">
     <div id="content">
       <div>
-<article>
+<article class="hentry">
   
   <header>
-    <h1 class="entry-title">Blog Archive</h1>
+    
+      <h1 class="entry-title">An Improved Rx Approach for Limiting Asynchronous Calls</h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2010-07-01 00:44:00 -0400" pubdate  updated >Jul 1<span>st</span>, 2010</time>
+
+
+</p>
     
   </header>
-  
-  <div id="blog-archives">
 
 
+<div class="entry-content"><p>Not a day after I posted Using Reactive Extensions To Throttle Asynchronous Tasks, Josh Bush was already (kindly) saying “I think your code may have a problem”. The issue with the first example is two-fold: one it doesn’t really work as posted and two, if it did it would behave in a less than ideal way. Basically, it calls wait after each item. Not exactly what I was going for.</p>
 
-  
-  <h2>2011</h2>
-
-<article>
-  
-<h1><a href="/blog/2011/04/07/crazy-pills/">Crazy Pills</a></h1>
-<time datetime="2011-04-07 08:25:00 -0400" pubdate><span class='month'>Apr</span> <span class='day'>07</span> <span class='year'>2011</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/opinion/'>opinion</a></span>
-</footer>
+<!--more-->
 
 
-</article>
+<h2>It Would Be Cool If…</h2>
+
+<p>You have some known/unknown quantity of total work (Y), and you want to limit the number of worker threads in process at any given time (X). What my first try was actually doing was making X asynchronous calls and for every call past that (X+N) it was immediately calling WaitOne on the wait handle.</p>
+
+<h2>Josh To The Rescue</h2>
+
+<p>I fought with my example for an hour or so and realized that there wasn’t just some really simple thing for me to tack on to the existing code sample. This morning, I read Josh’s post about his approach to limiting the number of asynchronous calls using IEnumerable only. The key to his approach (and little did I know, to mine as well) was the really cool Aggregate extension method.</p>
+
+<h2>My Improved Solution</h2>
+
+<div><script src='https://gist.github.com/1167335.js?file='></script>
+<noscript><pre><code>Action&lt;IList&lt;XElement&gt;&gt; saveAction = SaveChunk;
+var loader = new BulkPostLoader(@&quot;e:\stackoverflow\062010 so\posts.xml&quot;);
+var batches = loader.BufferWithCount(5000);
+var results = batches.Select(x =&gt; saveAction.BeginInvoke(x, null, null));
+        
+results
+    .Aggregate(new HashSet&lt;IAsyncResult&gt;(), (set, result) =&gt;
+    {
+        set.RemoveWhere(x =&gt; x.IsCompleted);
+        set.Add(result);
+        if(set.Count &gt; 5)
+        {
+            var inProcess = set.Where(x =&gt; !x.IsCompleted).FirstOrDefault();
+            if(inProcess != null)
+            {
+                inProcess.AsyncWaitHandle.WaitOne();
+            }
+        }
+        return set;
+    }
+    .Subscribe(x =&gt; {});</code></pre></noscript></div>
 
 
+<p>As you can see, the main difference is that I’m using a HashSet to aggregate calls over the stream. Every time I clear out any calls that have completed to prevent completed calls from making my code behave as if the number of calls in process have reached the limit. Every time I add the most recent async handle to the set and then, if the set is above the limit, I take an uncompleted call and wait on it.</p>
 
-<article>
-  
-<h1><a href="/blog/2011/03/04/when-to-build-your-own/">When To Build Your Own</a></h1>
-<time datetime="2011-03-04 17:11:00 -0500" pubdate><span class='month'>Mar</span> <span class='day'>04</span> <span class='year'>2011</span></time>
+<h2>Well That Wasn’t So Bad, Was It?</h2>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/opinion/'>opinion</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2011/01/25/craftsmanship-and-delivery/">Craftsmanship and Delivery</a></h1>
-<time datetime="2011-01-25 17:15:00 -0500" pubdate><span class='month'>Jan</span> <span class='day'>25</span> <span class='year'>2011</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/opinion/'>opinion</a></span>
-</footer>
-
-
-</article>
-
-
-
-  
-  <h2>2010</h2>
-
-<article>
-  
-<h1><a href="/blog/2010/09/27/consistent-hashing/">Consistent Hashing</a></h1>
-<time datetime="2010-09-27 01:35:00 -0400" pubdate><span class='month'>Sep</span> <span class='day'>27</span> <span class='year'>2010</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/architecture/'>architecture</a>, <a class='category' href='/blog/categories/distributed-systems/'>distributed systems</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2010/07/01/an-improved-rx-approach-for-limiting-asynchronous-calls/">An Improved Rx Approach For Limiting Asynchronous Calls</a></h1>
-<time datetime="2010-07-01 00:44:00 -0400" pubdate><span class='month'>Jul</span> <span class='day'>01</span> <span class='year'>2010</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/-Net/'>.Net</a>, <a class='category' href='/blog/categories/Reactive-Extensions/'>Reactive Extensions</a></span>
-</footer>
-
-
-</article>
-
+<p>By now you’ve certainly realized I’m not an Rx expert, I’m just sharing what I’m trying to learn as I learn it. Hopefully it’s more helpful than it is distracting.</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Alex Robson</span></span>
+
+      
+
+
+
+
+<time datetime="2010-07-01 00:44:00 -0400" pubdate  updated >Jul 1<span>st</span>, 2010</time>
+
+
+
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/-Net/'>.Net</a>, <a class='category' href='/blog/categories/Reactive-Extensions/'>Reactive Extensions</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://sharplearningcurve.com/blog/2010/07/01/an-improved-rx-approach-for-limiting-asynchronous-calls/" data-via="A_Robson" data-counturl="http://sharplearningcurve.com/blog/2010/07/01/an-improved-rx-approach-for-limiting-asynchronous-calls/" >Tweet</a>
+  
+  
+  <g:plusone size="medium"></g:plusone>
+  
+</div>
+
+    
+  </footer>
 </article>
 
 </div>

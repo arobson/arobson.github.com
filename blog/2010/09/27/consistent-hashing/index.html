@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Sharp Learning Curve: Blog Archive</title>
+  <title>Sharp Learning Curve: Consistent Hashing</title>
   <meta name="author" content="Alex Robson">
   
 
@@ -16,7 +16,7 @@
 
   
 
-  <link rel="canonical" href="http://sharplearningcurve.com/blog/archives/index.html"/>
+  <link rel="canonical" href="http://sharplearningcurve.com/blog/2010/09/27/consistent-hashing/"/>
   <link href="/favicon.png" rel="shortcut icon" />
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -81,94 +81,118 @@
   <div id="main">
     <div id="content">
       <div>
-<article>
+<article class="hentry">
   
   <header>
-    <h1 class="entry-title">Blog Archive</h1>
+    
+      <h1 class="entry-title">Consistent Hashing</h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2010-09-27 01:35:00 -0400" pubdate  updated >Sep 27<span>th</span>, 2010</time>
+
+
+</p>
     
   </header>
-  
-  <div id="blog-archives">
 
 
+<div class="entry-content"><p>I’ve recently started working on a new set of architectural challenges. The core requirement, at a high-level, is process millions of transactions a day.</p>
 
-  
-  <h2>2011</h2>
+<p>After reading about consistent hashing, it seems to me that it’s one
+of the best ways to implement APIs that can dynamically scale out and
+rebalance. Consistent hashing isn’t the entire solution though, it’s
+just the algorithm used for making consistent assignments or
+relationships between different sets of data in such a way that if we
+add or remove items, the algorithm can be recalculated on any machine
+and produce the same results (hence, consistent).</p>
 
-<article>
-  
-<h1><a href="/blog/2011/04/07/crazy-pills/">Crazy Pills</a></h1>
-<time datetime="2011-04-07 08:25:00 -0400" pubdate><span class='month'>Apr</span> <span class='day'>07</span> <span class='year'>2011</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/opinion/'>opinion</a></span>
-</footer>
-
-
-</article>
+<!--more-->
 
 
+<h2>Implementation challenges</h2>
 
-<article>
-  
-<h1><a href="/blog/2011/03/04/when-to-build-your-own/">When To Build Your Own</a></h1>
-<time datetime="2011-03-04 17:11:00 -0500" pubdate><span class='month'>Mar</span> <span class='day'>04</span> <span class='year'>2011</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/opinion/'>opinion</a></span>
-</footer>
+<ul>
+<li>Given the same inputs, every client using the algorithm must produce the same results</li>
+<li>A good implementation will balance associations evenly across the available nodes</li>
+<li>A good implementation should be capable of quickly rebalancing the associations if a node is removed or added</li>
+</ul>
 
 
-</article>
+<h2>Calculating Consistent Results</h2>
 
+<p>This is the simple part of consistent hashing: use the same value to hash against and use a hashing method that produces the same result given identical inputs and you’re done. I’ve been using MD5, it’s fast and simple to convert strings into 64 bit integers.</p>
 
+<p>The downside to this solution is that there’s no way to guarantee a nice and even distribution of key space since hashing produces consistent yet unpredictable results. That leads us to the next point:</p>
 
-<article>
-  
-<h1><a href="/blog/2011/01/25/craftsmanship-and-delivery/">Craftsmanship and Delivery</a></h1>
-<time datetime="2011-01-25 17:15:00 -0500" pubdate><span class='month'>Jan</span> <span class='day'>25</span> <span class='year'>2011</span></time>
+<h2>Producing Balanced Distributions</h2>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/opinion/'>opinion</a></span>
-</footer>
+<p>This part is significantly more difficult. Fortunately, it’s been solved frequently by other developers who share their knowledge. The solution is to assign virtual keys for each key (see the fourth slide for an example) so that we decrease the distance between keys and thus even out the key space. The trick is finding the right balance of virtual keys to add per key.</p>
 
+<h2>Rebalancing</h2>
 
-</article>
+<p>The rebalancing should actually happen automatically. When removing a key, all the virtual nodes are removed; when adding a key, new virtual keys get added. The catch is making this happen in a performant manner.</p>
 
+<h2>Need For Speed</h2>
 
+<p>If we keep the list of keys in a list, adding, removing and even looking up the correct key can become costly and the time for each operation increases linearly as the set of virtual keys grows. What we want is a fast way to handle all of these operations that has logarithmic performance. As it happens, binary trees are a great way to improve look-up speed and red-black trees are a very performant way to auto-balance the tree after adds or removes to ensure that the tree is optimized for look-ups. I used a red-black tree algorithm because it’s one that I could handle and I found some good material to help discuss some interesting approaches for implementation.</p>
 
-  
-  <h2>2010</h2>
+<h2>Applications In Symbiote</h2>
 
-<article>
-  
-<h1><a href="/blog/2010/09/27/consistent-hashing/">Consistent Hashing</a></h1>
-<time datetime="2010-09-27 01:35:00 -0400" pubdate><span class='month'>Sep</span> <span class='day'>27</span> <span class='year'>2010</span></time>
+<p>There are actually several places I plan to introduce consistent hashing behind the scenes. I’ve already written a class called a Distributor which encapsulates a consistent hash and behaves like a strongly typed collection. This approach will allow me to easily add connection balancing to the Couch, Memcached, Redis, and RabbitMQ APIs. It will also enable a few other essential features (blog posts to follow).</p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/architecture/'>architecture</a>, <a class='category' href='/blog/categories/distributed-systems/'>distributed systems</a></span>
-</footer>
+<p>I put together a few slides to provide some illustrations for a way to
+conceptualize how consistent hashing works.</p>
 
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2010/07/01/an-improved-rx-approach-for-limiting-asynchronous-calls/">An Improved Rx Approach For Limiting Asynchronous Calls</a></h1>
-<time datetime="2010-07-01 00:44:00 -0400" pubdate><span class='month'>Jul</span> <span class='day'>01</span> <span class='year'>2010</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/-Net/'>.Net</a>, <a class='category' href='/blog/categories/Reactive-Extensions/'>Reactive Extensions</a></span>
-</footer>
-
-
-</article>
-
+<p><img src="/images/consistent-hashing-1.png" alt="Slide 1" />
+<img src="/images/consistent-hashing-2.png" alt="Slide 2" />
+<img src="/images/consistent-hashing-3.png" alt="Slide 3" />
+<img src="/images/consistent-hashing-4.png" alt="Slide 4" /></p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Alex Robson</span></span>
+
+      
+
+
+
+
+<time datetime="2010-09-27 01:35:00 -0400" pubdate  updated >Sep 27<span>th</span>, 2010</time>
+
+
+
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/architecture/'>architecture</a>, <a class='category' href='/blog/categories/distributed-systems/'>distributed systems</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://sharplearningcurve.com/blog/2010/09/27/consistent-hashing/" data-via="A_Robson" data-counturl="http://sharplearningcurve.com/blog/2010/09/27/consistent-hashing/" >Tweet</a>
+  
+  
+  <g:plusone size="medium"></g:plusone>
+  
+</div>
+
+    
+  </footer>
 </article>
 
 </div>
